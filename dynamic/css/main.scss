@@ -1,0 +1,30 @@
+@import 'blueprint/reset';
+@import 'blueprint/typography';
+@import "compass/css3/box-shadow";
+@import 'blueprint/interaction';
+
+@include blueprint-typography;
+
+$bg: #F6F6F6;
+$default-box-shadow-blur: 18px;
+$default-box-h-offset: 3px;
+$default-box-shadow-color: darken($bg, 50%);
+
+body {
+  font-family: 'Puritan', arial, serif;
+  background-color: $bg;
+}
+
+#wrapper {
+  width: 600px;
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  border: darken($bg, 4%) solid;
+  border-width: 0 1px 1px;
+  @include single-box-shadow();
+}
+
+.success {
+  @include success();
+}
