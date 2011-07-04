@@ -3,20 +3,19 @@
 @import "compass/css3/box-shadow";
 @import 'blueprint/interaction';
 
-@include blueprint-typography;
-
 $bg: #F6F6F6;
 $default-box-shadow-blur: 18px;
 $default-box-h-offset: 3px;
 $default-box-shadow-color: darken($bg, 50%);
 
+@include blueprint-typography;
+
 body {
-  font-family: 'Puritan', arial, serif;
   background-color: $bg;
 }
 
 #wrapper {
-  width: 600px;
+  width: 650px;
   margin: auto;
   background-color: white;
   padding: 20px;

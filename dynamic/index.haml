@@ -1,4 +1,11 @@
 %h1 Print Mijn Paper .nl
 
 %p Upload hier je paper
-%input#upload{ :name => 'file', :type => 'file' }
+%input#upload(name = 'file' type = 'file')
+
+%a(href        = '#'
+   style       = 'display: none;'
+   class       = 'peecho-print-button'
+   data-width  = 210
+   data-height = 297
+   data-pages  = 30)
