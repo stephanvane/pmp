@@ -14,8 +14,10 @@
     %script{ :type => 'text/javascript', :src => 'js/main.js' }
     %script{ :type => 'text/javascript', :src => 'http://button.peecho.com/button/script/13096995444470.js' }
 
-    /= refresh
+    = refresh
     
   %body
+    #header
+      %h1 Print Mijn Paper .nl
     #wrapper
       = yield

@@ -2,28 +2,64 @@
 @import 'blueprint/typography';
 @import "compass/css3/box-shadow";
 @import 'blueprint/interaction';
+@import 'blueprint/form';
+@import "compass/css3/text-shadow";
+@import "compass/css3/images";
 
-$bg: #F6F6F6;
-$default-box-shadow-blur: 18px;
-$default-box-h-offset: 3px;
-$default-box-shadow-color: darken($bg, 50%);
+//$body-bg: #F6F6F6;
+$body-bg: #C0D9FF;
+//$body-bg: #D9FFC0;
+//$body-bg: #FFC0D9;
+
+$header-bg: darken($body-bg, 50%);
+
+$default-box-shadow-blur: 180px;
+$default-box-shadow-spread: -20px;
+//$default-box-h-offset: 3px;
+//$default-box-shadow-color: grayscale(darken($body-bg, 50%));
 
 @include blueprint-typography;
 
 body {
-  background-color: $bg;
+  background-color: $body-bg;
 }
 
 #wrapper {
   width: 650px;
-  margin: auto;
+  margin: -25px auto;
   background-color: white;
   padding: 20px;
-  border: darken($bg, 4%) solid;
+  border: 1px solid darken(white, 30%);
   border-width: 0 1px 1px;
-  @include single-box-shadow();
+//  @include single-box-shadow();
+  min-height: 500px;
 }
 
 .success {
   @include success();
+}
+
+#header {
+  background: $header-bg;
+  @include background-image(linear-gradient($header-bg, darken($header-bg, 7%)));
+  
+  padding: 20px 0;
+  border-bottom: 1px solid darken($header-bg, 30%);
+  
+  h1 {
+    color: white;
+    text-align: center;
+    @include single-text-shadow(darken($header-bg, 15%), 1px, 1px, 1px);
+    font-size: 4em;
+  }
+}
+
+form {
+  @include blueprint-form;
+  @include blueprint-inline-form;
+  
+  label {
+    float: left;
+    width: 100px;
+  }
 }

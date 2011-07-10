@@ -1,11 +1,25 @@
-%h1 Print Mijn Paper .nl
+%ol
+  %li
+    %h2 Upload hier je paper
+    %input#upload(name = 'file' type = 'file')
+  %li#step2(style = 'display: none;')
+    %h2 Vul de gegevens in
+    %form
+      %p
+        %label(for = 'numPages') Aantal paginas
+        %input#numPages(type = 'number' name = 'numPages')
+      %p
+        %label(for = 'size') Formaat
+        %select#size(name = 'size')
+          %option(value = 'a4') A4
+          %option(value = 'a5') A5
+      %p
+        %button Verder
+  %li#step3(style = 'display: none;')
+    %h2 Print!
 
-%p Upload hier je paper
-%input#upload(name = 'file' type = 'file')
-
-%a(href        = '#'
-   style       = 'display: none;'
-   class       = 'peecho-print-button'
-   data-width  = 210
-   data-height = 297
-   data-pages  = 30)
+    %a(href        = '#'
+       class       = 'peecho-print-button'
+       data-width  = 210
+       data-height = 297
+       data-pages  = 30)

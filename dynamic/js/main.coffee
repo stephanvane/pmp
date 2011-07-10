@@ -2,6 +2,8 @@ $ ->
   filename = "#{uuid()}.pdf"
   url = "http://paperprinten.s3.amazonaws.com/uploads/#{filename}"
   
+  $printButton = $('.peecho-print-button')
+  
   $('#upload').uploadify
     uploader: 'js/uploadify/uploadify.swf'
     script: 'http://paperprinten.s3.amazonaws.com'
@@ -16,11 +18,10 @@ $ ->
       $text = $("<p class='success'>Uploaded file to <a href='#{url}'>#{url}</a></p>")
       $('#upload').replaceWith($text)
       $('#uploadUploader').hide()
-      
-      $printButton = $('.peecho-print-button')
+
       $printButton.attr 'data-src', url
-      $printButton.attr 'data-pages', 30
-      $printButton.show()
+      
+      $('#step2').show()
     auto: true
     cancelImg: 'js/uploadify/cancel.png'
     fileDataName: 'file'
@@ -28,6 +29,19 @@ $ ->
       key: "uploads/#{filename}"
       success_action_status: 201
       'Content-Type': 'application/pdf'
+      
+  $('#step2 form').submit (e) ->
+    $printButton.attr 'data-pages', $('#numPages').val()
+    switch $('#size').val()
+      when 'a4'
+        $printButton.attr 'data-width', 210
+        $printButton.attr 'data-height', 297
+      when 'a5'
+        $printButton.attr 'data-width', 148
+        $printButton.attr 'data-height', 210
+    
+    $('#step3').show();
+    false
       
 uuid = ->
   'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace /[xy]/g, (c) ->
