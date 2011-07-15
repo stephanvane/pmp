@@ -25,7 +25,7 @@ $ ->
     
     #events
     onComplete: (e, id, file, response, data) ->
-      $text = $("<p class='success'>Uploaded file to <a href='#{url}'>#{url}</a></p>")
+      $text = $("<p class='success'>Successfully uploaded file</p>")
       $('#upload').replaceWith($text)
       $('#uploadUploader').hide()
 
