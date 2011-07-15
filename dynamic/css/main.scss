@@ -6,17 +6,12 @@
 @import "compass/css3/text-shadow";
 @import "compass/css3/images";
 
-//$body-bg: #F6F6F6;
 $body-bg: #C0D9FF;
-//$body-bg: #D9FFC0;
-//$body-bg: #FFC0D9;
 
 $header-bg: darken($body-bg, 50%);
 
 $default-box-shadow-blur: 180px;
 $default-box-shadow-spread: -20px;
-//$default-box-h-offset: 3px;
-//$default-box-shadow-color: grayscale(darken($body-bg, 50%));
 
 @include blueprint-typography;
 
@@ -31,7 +26,6 @@ body {
   padding: 20px;
   border: 1px solid darken(white, 30%);
   border-width: 0 1px 1px;
-//  @include single-box-shadow();
   min-height: 500px;
 }
 

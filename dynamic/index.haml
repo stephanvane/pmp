@@ -2,7 +2,7 @@
   %li
     %h2 Upload hier je paper
     %input#upload(name = 'file' type = 'file')
-  %li#step2(style = 'display: none;')
+  %li#step2(style = 'display: block;')
     %h2 Vul de gegevens in
     %form
       %p
@@ -19,7 +19,4 @@
     %h2 Print!
 
     %a(href        = '#'
-       class       = 'peecho-print-button'
-       data-width  = 210
-       data-height = 297
-       data-pages  = 30)
+       class       = 'peecho-print-button')
